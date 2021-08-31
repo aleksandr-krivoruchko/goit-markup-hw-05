@@ -96,7 +96,6 @@ a {
 .logo {
   display: inline-block;
   margin-right: 93px;
-
   font-family: 'Raleway', sans-serif;
   color: #000000;
   font-weight: 700;
@@ -112,6 +111,11 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
+}
+.main-nav .link {
+  transition-property: color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-nav .link:hover,
 .main-nav .link:focus {
@@ -155,6 +159,9 @@ a {
   display: block;
   background: #2196f3;
   border-radius: 2px;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-list .link.current::after {
   opacity: 1;
@@ -229,6 +236,9 @@ a {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -291,7 +301,7 @@ a {
   height: 70px;
   background: rgba(47, 48, 58, 0.8);
 }
-.label p {
+.label h3 {
   padding-top: 27px;
   font-weight: bold;
   font-size: 14px;
@@ -335,8 +345,12 @@ a {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-list > .item:hover {
+.team-list > .item:hover,
+.team-list > .item:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -373,6 +387,9 @@ a {
   border-radius: 50%;
   fill: #afb1b8;
   background-color: #ffffff;
+  transition-property: box-shadow, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus {
@@ -392,6 +409,9 @@ a {
   width: 170px;
   height: 92px;
 }
+.clients-list > .item:not(:last-child) {
+  margin-right: 30px;
+}
 .clients-list .link {
   width: 100%;
   height: 100%;
@@ -402,9 +422,9 @@ a {
   box-sizing: border-box;
   border-radius: 4px;
   fill: #afb1b8;
-}
-.clients-list > .item:not(:last-child) {
-  margin-right: 30px;
+  transition-property: border, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-list .link:hover,
 .clients-list .link:focus {
@@ -424,7 +444,6 @@ a {
   padding: 6px 22px;
   margin-right: 8px;
   text-align: center;
-
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 16px;
@@ -433,6 +452,9 @@ a {
   border: hidden;
   border-radius: 4px;
   cursor: pointer;
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-list-btn:hover,
@@ -456,11 +478,6 @@ a {
   flex-basis: calc(100% / 3 - 30px);
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
-}
-.portfolio-list > .item:hover {
-  cursor: pointer;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .portfolio-list .item-content {
@@ -487,15 +504,26 @@ a {
 }
 .description {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.item:hover .description {
+.item:hover,
+.item:focus {
+  cursor: pointer;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.item:hover .description,
+.item:focus .description {
   opacity: 1;
+  transform: translateY(-100%);
 }
 
 .description p {
@@ -614,6 +642,7 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
-.modal-btn:hover {
+.modal-btn:hover,
+.modal-btn:focus {
   border: 1px solid var(--accent-color);
 }
