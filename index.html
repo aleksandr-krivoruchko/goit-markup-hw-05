@@ -15,6 +15,10 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
@@ -22,7 +26,7 @@
     <header class="header">
       <div class="main-nav container">
         <nav class="site-nav">
-          <a href="" lang="en" class="logo"
+          <a href="" lang="en" class="logo animate__animated animate__heartBeat"
             ><span class="logo-span">Web</span>Studio</a
           >
           <ul class="nav-list">
@@ -349,7 +353,7 @@
           <ul class="clients-list">
             <li class="item">
               <a class="link" href="http://">
-                <svg width="106" height="60">
+                <svg class="icon" width="106" height="60">
                   <use href="./images/icons.svg#icon-client1"></use>
                 </svg>
               </a>
@@ -454,6 +458,7 @@
         </div>
       </div>
     </footer>
+    <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-btn" type="button" data-modal-close>
